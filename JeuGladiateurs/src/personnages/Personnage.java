@@ -17,17 +17,58 @@ public class Personnage {
     
     // <editor-fold defaultstate="collapsed" desc="Constructeurs et initialisation">
     public Personnage(String nom, int attaqueMax, int defense, int pvs, int ini) {
-      
+        // TODO : Constructeur AVEC paramètres
     }
 
     public Personnage() {
-        // TODO : Constructeur SANS paramètres qui initialise à ZÉRO ou à ""
+        this.nom = "";
+        this.pointDeVie = 0;
+        this.valeurMaxAttaque = 0;
+        this.valeurDefense = 0;
+        this.iniative = 0;
     }
     // </editor-fold>
 
-    // **************************************************************************
-    // **************************************************************************
-    // **************************************************************************
+    public String getNom() {
+        return nom;
+    }
+
+    public int getPointDeVie() {
+        return pointDeVie;
+    }
+
+    public int getValeurMaxAttaque() {
+        return valeurMaxAttaque;
+    }
+
+    public int getValeurDefense() {
+        return valeurDefense;
+    }
+
+    public int getIniative() {
+        return iniative;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setPointDeVie(int pointDeVie) {
+        this.pointDeVie = pointDeVie;
+    }
+
+    public void setValeurMaxAttaque(int valeurMaxAttaque) {
+        this.valeurMaxAttaque = valeurMaxAttaque;
+    }
+
+    public void setValeurDefense(int valeurDefense) {
+        this.valeurDefense = valeurDefense;
+    }
+
+    public void setIniative(int iniative) {
+        this.iniative = iniative;
+    }
+    
     // <editor-fold defaultstate="collapsed" desc="Getters et setters">
     // TODO : Les getters
     // TODO : Les setters
