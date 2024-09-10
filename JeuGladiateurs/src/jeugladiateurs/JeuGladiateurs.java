@@ -24,7 +24,7 @@ public class JeuGladiateurs {
     // <editor-fold defaultstate="collapsed" desc="Affichage pré-combat">
     Bob.afficherInfosPersonnage();
     Igor.afficherInfosPersonnage();
-    // TODO : Afficher le message du début du combat
+    affichage.afficherDebutCombat();
     // </editor-fold>
 
     // **************************************************************************
