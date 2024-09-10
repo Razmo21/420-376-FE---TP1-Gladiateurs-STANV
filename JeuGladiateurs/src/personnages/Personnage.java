@@ -1,23 +1,24 @@
 package personnages;
 
-import java.util.logging.Logger;
-
 public class Personnage {
 
+    // <editor-fold defaultstate="collapsed" desc="Attributs">
     String nom;
     int pointDeVie;
     int valeurMaxAttaque;
     int valeurDefense;
     int iniative;
-    
-    // <editor-fold defaultstate="collapsed" desc="Attributs">
-    // TODO : Mettre vos attributs ici
     // </editor-fold>
 
     
     // <editor-fold defaultstate="collapsed" desc="Constructeurs et initialisation">
     public Personnage(String nom, int attaqueMax, int defense, int pvs, int ini) {
-        // TODO : Constructeur AVEC paramètres
+        this.nom = nom;
+        this.pointDeVie = pvs;
+        this.valeurMaxAttaque = attaqueMax;
+        this.valeurDefense = defense;
+        this.iniative = ini;
+        
     }
 
     public Personnage() {
@@ -28,8 +29,13 @@ public class Personnage {
         this.iniative = 0;
     }
     // </editor-fold>
-
-    public String getNom() {
+    
+    // **************************************************************************
+    // **************************************************************************
+    // **************************************************************************
+    
+    // <editor-fold defaultstate="collapsed" desc="Getters et setters">
+public String getNom() {
         return nom;
     }
 
@@ -68,10 +74,6 @@ public class Personnage {
     public void setIniative(int iniative) {
         this.iniative = iniative;
     }
-    
-    // <editor-fold defaultstate="collapsed" desc="Getters et setters">
-    // TODO : Les getters
-    // TODO : Les setters
     // </editor-fold>
 
     // **************************************************************************
