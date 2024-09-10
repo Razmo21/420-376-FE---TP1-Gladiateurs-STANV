@@ -36,12 +36,12 @@ public class CompteurDeTour {
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Mécanique de jeu">
     public void augmenteTour() {
-        this.cptrTour = cptrTour + 1;
+        this.cptrTour++;
     }
 
     public void afficheTour() {
         System.out.println("---------------");
-        System.out.println("TOUR ACTUEL : 1");
+        System.out.println("TOUR ACTUEL : " + this.cptrTour);
         System.out.println("---------------");
     }
     // </editor-fold>
