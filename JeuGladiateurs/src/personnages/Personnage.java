@@ -1,20 +1,23 @@
 package personnages;
 
+import java.util.logging.Logger;
+
 public class Personnage {
 
-    // **************************************************************************
-    // **************************************************************************
-    // **************************************************************************
+    String nom;
+    int pointDeVie;
+    int valeurMaxAttaque;
+    int valeurDefense;
+    int iniative;
+    
     // <editor-fold defaultstate="collapsed" desc="Attributs">
     // TODO : Mettre vos attributs ici
     // </editor-fold>
 
-    // **************************************************************************
-    // **************************************************************************
-    // **************************************************************************
+    
     // <editor-fold defaultstate="collapsed" desc="Constructeurs et initialisation">
     public Personnage(String nom, int attaqueMax, int defense, int pvs, int ini) {
-        // TODO : Constructeur AVEC paramètres
+      
     }
 
     public Personnage() {
