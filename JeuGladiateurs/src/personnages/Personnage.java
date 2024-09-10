@@ -81,11 +81,17 @@ public String getNom() {
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Mécanique de jeu">
     public void afficherInfosPersonnage() {
+        System.out.println("\n");
         System.out.println(nom);
         System.out.println("Attaque : " + valeurMaxAttaque);
         System.out.println("Défense : " + valeurDefense);
         System.out.println("Point de vie : " + pointDeVie);
         System.out.println("Initiative : " + initiative);
+        if (pointDeVie >= 1) {
+            System.out.println("Statut : Vivant");
+        }else {
+            System.out.println("Statut : Mort");
+        }
     }
 
     private int attaqueCalcul() {
