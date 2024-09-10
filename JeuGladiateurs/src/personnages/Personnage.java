@@ -1,5 +1,7 @@
 package personnages;
 
+import java.util.Random;
+
 public class Personnage {
 
     // <editor-fold defaultstate="collapsed" desc="Attributs">
@@ -93,13 +95,14 @@ public String getNom() {
             System.out.println("Statut : Mort");
         }
     }
-
-    private int attaqueCalcul() {
+    
+    
+    public int attaqueCalcul() { 
         // TODO : Retourner la valeur de l'attaque du personnage.
         // Cette valeur est trouvée aléatoirement et doit se situer entre ZÉRO et valeurMaxAttaque.
         return 0;
     }
-
+    
     public void frapperPersonnage(Personnage personnageCible) {
         // TODO : Récupérer la valeur d'attaque pour ce tour, calculer les dégats,
         //modifier les points de vie du personnage cible, afficher les détails
