@@ -7,7 +7,7 @@ public class Personnage {
     int pointDeVie;
     int valeurMaxAttaque;
     int valeurDefense;
-    int iniative;
+    int initiative;
     // </editor-fold>
 
     
@@ -17,7 +17,7 @@ public class Personnage {
         this.pointDeVie = pvs;
         this.valeurMaxAttaque = attaqueMax;
         this.valeurDefense = defense;
-        this.iniative = ini;
+        this.initiative = ini;
         
     }
 
@@ -26,7 +26,7 @@ public class Personnage {
         this.pointDeVie = 0;
         this.valeurMaxAttaque = 0;
         this.valeurDefense = 0;
-        this.iniative = 0;
+        this.initiative = 0;
     }
     // </editor-fold>
     
@@ -52,7 +52,7 @@ public String getNom() {
     }
 
     public int getIniative() {
-        return iniative;
+        return initiative;
     }
 
     public void setNom(String nom) {
@@ -72,7 +72,7 @@ public String getNom() {
     }
 
     public void setIniative(int iniative) {
-        this.iniative = iniative;
+        this.initiative = iniative;
     }
     // </editor-fold>
 
@@ -81,7 +81,11 @@ public String getNom() {
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Mécanique de jeu">
     public void afficherInfosPersonnage() {
-        // TODO : Afficher les infos du personnage, tel que montré dans l'énoncé
+        System.out.println(nom);
+        System.out.println("Attaque : " + valeurMaxAttaque);
+        System.out.println("Défense : " + valeurDefense);
+        System.out.println("Point de vie : " + pointDeVie);
+        System.out.println("Initiative : " + initiative);
     }
 
     private int attaqueCalcul() {
