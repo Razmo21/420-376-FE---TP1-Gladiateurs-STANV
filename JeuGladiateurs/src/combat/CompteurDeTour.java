@@ -40,6 +40,7 @@ public class CompteurDeTour {
     }
 
     public void afficheTour() {
+        System.out.println("\n");
         System.out.println("---------------");
         System.out.println("TOUR ACTUEL : " + this.cptrTour);
         System.out.println("---------------");
