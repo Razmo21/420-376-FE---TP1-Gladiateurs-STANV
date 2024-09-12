@@ -31,17 +31,32 @@ public class JeuGladiateurs {
     // **************************************************************************
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Mécanique de combat">
-        for (int i = 0; i <= 100; i++) {
-            if (i == Bob.getIniative()) {
-                Bob.frapperPersonnage(Igor);
-            };
-            if (i == Igor.getIniative()) {
-                Igor.frapperPersonnage(Bob);
-            };
-        };
-        
-        
-    // TODO : Après la boucle, afficher le résultat du combat
+        while (Bob.getPointDeVie() > 0 && Igor.getPointDeVie() > 0) {
+            tour.afficheTour();
+
+            for (int i = 0; i <= 100; i++) {
+                if (i == Bob.getIniative()) {
+                    Bob.frapperPersonnage(Igor);
+                }
+                if (i == Igor.getIniative()) {
+                    Igor.frapperPersonnage(Bob);
+                }
+            }
+
+            affichage.afficherSeparateurInfosPerso();
+
+            Bob.afficherInfosPersonnage();
+            Igor.afficherInfosPersonnage();
+
+            Bob.setNewInitiativeAleatoire();
+            Igor.setNewInitiativeAleatoire();
+
+            tour.augmenteTour();
+
+            affichage.afficherSeparateurDeTour();
+            
+            affichage.afficheVictoire(Bob, Igor);
+        }
     // </editor-fold><
     }
 }
