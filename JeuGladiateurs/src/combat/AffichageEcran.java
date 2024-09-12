@@ -16,6 +16,7 @@ public class AffichageEcran {
     }
     
     public void afficherSeparateurDeTour() {
+        System.out.println("\n");
         System.out.println("**************************************");
     }
 
@@ -26,8 +27,21 @@ public class AffichageEcran {
         System.out.println("-----------------");
     }
 
-    public void afficheVictoire(Personnage personnage1, Personnage personnage2) {
-        // TODO : Afficher le gagnant du combat, tel que montré dans l'énoncé
+    public void afficheVictoire(Personnage Bob, Personnage Igor) {
+        System.out.println("\n");
+        
+        if (Bob.getPointDeVie() > 0) {
+            System.out.println(Bob.getNom() + " gagne le combat !!!");
+            System.out.println("\n");
+        } 
+        else if (Igor.getPointDeVie() > 0) {
+            System.out.println(Igor.getNom() + " gagne le combat !!!");
+            System.out.println("\n");
+        } 
+        else {
+            System.out.println("Aucun des deux personnages n'a gagné. C'est un match nul !");
+            System.out.println("\n");
     }
+}
     // </editor-fold>
 }
