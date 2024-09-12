@@ -129,7 +129,9 @@ public String getNom() {
 
 
     public void setNewInitiativeRandom() {
-        // TODO : Modifier de façon aléatoire la valeur INI du personnage.
+        Random rand = new Random();
+        
+        initiative = rand.nextInt(100);
     }
     // </editor-fold>
 }
