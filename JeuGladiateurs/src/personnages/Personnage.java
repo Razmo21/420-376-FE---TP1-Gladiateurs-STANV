@@ -128,7 +128,7 @@ public String getNom() {
     }
 
 
-    public void setNewInitiativeRandom() {
+    public void setNewInitiativeAleatoire() {
         Random rand = new Random();
         
         initiative = rand.nextInt(100);
