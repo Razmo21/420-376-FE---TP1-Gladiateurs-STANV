@@ -31,7 +31,16 @@ public class JeuGladiateurs {
     // **************************************************************************
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Mécanique de combat">
-    // TODO : La boucle contenant les étapes du combat
+        for (int i = 0; i <= 100; i++) {
+            if (i == Bob.getIniative()) {
+                Bob.frapperPersonnage(Igor);
+            };
+            if (i == Igor.getIniative()) {
+                Igor.frapperPersonnage(Bob);
+            };
+        };
+        
+        
     // TODO : Après la boucle, afficher le résultat du combat
     // </editor-fold><
     }
