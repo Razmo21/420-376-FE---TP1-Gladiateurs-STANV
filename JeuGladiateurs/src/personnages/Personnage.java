@@ -97,17 +97,36 @@ public String getNom() {
     }
     
     
-    public int attaqueCalcul() { 
-        // TODO : Retourner la valeur de l'attaque du personnage.
-        // Cette valeur est trouvée aléatoirement et doit se situer entre ZÉRO et valeurMaxAttaque.
-        return 0;
-    }
+    private int attaqueCalcul() { 
+        Random rand = new Random();
     
-    public void frapperPersonnage(Personnage personnageCible) {
-        // TODO : Récupérer la valeur d'attaque pour ce tour, calculer les dégats,
-        //modifier les points de vie du personnage cible, afficher les détails
-        // sur l'attaque, tel que montré dans l'énoncé.
+        int maxValue = valeurMaxAttaque;
+        int attaque = rand.nextInt(maxValue + 1);
+
+        return attaque;
     }
+
+    public void frapperPersonnage(Personnage personnageCible) {
+        int attaque = attaqueCalcul();
+        int dommages = attaque - personnageCible.valeurDefense;
+
+        if (dommages < 0) {
+            dommages = 0;
+        }
+
+        personnageCible.pointDeVie -= dommages;
+    
+        if (personnageCible.pointDeVie < 0) {
+            personnageCible.pointDeVie = 0;
+        }
+
+        System.out.println("\n");
+        System.out.println(this.nom + " attaque avec une puissance de : " + attaque);
+        System.out.println(personnageCible.getNom() + " a une défense de : " + personnageCible.valeurDefense);
+        System.out.println("Les dommages sont de : " + dommages);
+        System.out.println(personnageCible.getNom() + " a maintenant " + personnageCible.pointDeVie + " points de vie.");
+    }
+
 
     public void setNewInitiativeRandom() {
         // TODO : Modifier de façon aléatoire la valeur INI du personnage.
