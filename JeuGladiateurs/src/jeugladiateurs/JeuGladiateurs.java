@@ -6,13 +6,16 @@ import personnages.Personnage.Retiaire;
 import combat.CompteurDeTour;
 import combat.AffichageEcran;
 
-public class JeuGladiateurs {
+public class JeuGladiateurs 
+{
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
 
         // **************************************************************************
         // **************************************************************************
         // **************************************************************************
+        
         // <editor-fold defaultstate="expanded" desc="Instanciation des objets">
         CompteurDeTour tour = new CompteurDeTour();
         AffichageEcran affichage = new AffichageEcran();
@@ -23,6 +26,7 @@ public class JeuGladiateurs {
         // **************************************************************************
         // **************************************************************************
         // **************************************************************************
+        
         // <editor-fold defaultstate="collapsed" desc="Affichage pré-combat">
         mirmillon.afficherInfosPersonnage();
         retaire.afficherInfosPersonnage();
@@ -32,17 +36,30 @@ public class JeuGladiateurs {
         // **************************************************************************
         // **************************************************************************
         // **************************************************************************
+        
         // <editor-fold defaultstate="collapsed" desc="Mécanique de combat">
-        while (mirmillon.getPointDeVie() > 0 && retaire.getPointDeVie() > 0) {
+        while (mirmillon.getPointDeVie() > 0 && retaire.getPointDeVie() > 0) 
+        {
             tour.afficheTour();
 
-            if (mirmillon.getInitiative() >= retaire.getInitiative()) {
+            if (mirmillon.getInitiative() >= retaire.getInitiative()) 
+            {
                 mirmillon.frapperPersonnage(retaire);
-                if (retaire.getPointDeVie() <= 0) break; // Arrête le combat si mort
+                
+                if (retaire.getPointDeVie() <= 0) {
+                    break;
+                } 
+                
                 retaire.frapperPersonnage(mirmillon);
-            } else {
+            } 
+            else 
+            {
                 retaire.frapperPersonnage(mirmillon);
-                if (mirmillon.getPointDeVie() <= 0) break; // Arrête le combat si mort
+                
+                if (mirmillon.getPointDeVie() <= 0) {
+                    break;
+                } 
+                
                 mirmillon.frapperPersonnage(retaire);
             }
 
@@ -57,7 +74,6 @@ public class JeuGladiateurs {
             affichage.afficherSeparateurDeTour();
         }
         
-        // Appel de `afficheVictoire()` après la fin du combat
         affichage.afficheVictoire(mirmillon, retaire);
     // </editor-fold>
     }
