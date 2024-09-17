@@ -1,6 +1,8 @@
 package jeugladiateurs;
 
 import personnages.Personnage;
+import personnages.Personnage.Mirmillon;
+import personnages.Personnage.Retiaire;
 import combat.CompteurDeTour;
 import combat.AffichageEcran;
 
@@ -14,16 +16,16 @@ public class JeuGladiateurs {
         // <editor-fold defaultstate="expanded" desc="Instanciation des objets">
         CompteurDeTour tour = new CompteurDeTour();
         AffichageEcran affichage = new AffichageEcran();
-        Personnage Bob = new Personnage("Bob le bricoleur", 15, 15, 70, 15);
-        Personnage Igor = new Personnage("Igor l'empaleur", 25, 5, 100, 30);
+        Personnage mirmillon = new Mirmillon("Bob le bricoleur", 15, 15, 70);
+        Personnage retaire = new Retiaire("Igor l'empaleur", 25, 5, 100);
         // </editor-fold>
 
         // **************************************************************************
         // **************************************************************************
         // **************************************************************************
         // <editor-fold defaultstate="collapsed" desc="Affichage pré-combat">
-        Bob.afficherInfosPersonnage();
-        Igor.afficherInfosPersonnage();
+        mirmillon.afficherInfosPersonnage();
+        retaire.afficherInfosPersonnage();
         affichage.afficherDebutCombat();
         // </editor-fold>
         
@@ -31,33 +33,32 @@ public class JeuGladiateurs {
         // **************************************************************************
         // **************************************************************************
         // <editor-fold defaultstate="collapsed" desc="Mécanique de combat">
-        while (Bob.getPointDeVie() > 0 && Igor.getPointDeVie() > 0) {
+        while (mirmillon.getPointDeVie() > 0 && retaire.getPointDeVie() > 0) {
             tour.afficheTour();
 
-            for (int i = 0; i <= 100; i++) {
-                if (i == Bob.getInitiative()) {
-                    Bob.frapperPersonnage(Igor);
-                }
-                if (i == Igor.getInitiative()) {
-                    Igor.frapperPersonnage(Bob);
-                }
+            if (mirmillon.getInitiative() >= retaire.getInitiative()) {
+                mirmillon.frapperPersonnage(retaire);
+                if (retaire.getPointDeVie() <= 0) break; // Arrête le combat si mort
+                retaire.frapperPersonnage(mirmillon);
+            } else {
+                retaire.frapperPersonnage(mirmillon);
+                if (mirmillon.getPointDeVie() <= 0) break; // Arrête le combat si mort
+                mirmillon.frapperPersonnage(retaire);
             }
 
             affichage.afficherSeparateurInfosPerso();
+            mirmillon.afficherInfosPersonnage();
+            retaire.afficherInfosPersonnage();
 
-            Bob.afficherInfosPersonnage();
-            Igor.afficherInfosPersonnage();
-
-            Bob.setNewInitiativeAleatoire();
-            Igor.setNewInitiativeAleatoire();
+            mirmillon.setNewInitiativeAleatoire();
+            retaire.setNewInitiativeAleatoire();
 
             tour.augmenteTour();
-
             affichage.afficherSeparateurDeTour();
         }
         
         // Appel de `afficheVictoire()` après la fin du combat
-        affichage.afficheVictoire(Bob, Igor);
+        affichage.afficheVictoire(mirmillon, retaire);
     // </editor-fold>
     }
 }
