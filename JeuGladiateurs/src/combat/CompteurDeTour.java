@@ -1,10 +1,12 @@
 package combat;
 
-public class CompteurDeTour {
+public class CompteurDeTour 
+{
 
     // **************************************************************************
     // **************************************************************************
     // **************************************************************************
+    
     // <editor-fold defaultstate="collapsed" desc="Attributs">
     int cptrTour;
     // </editor-fold>
@@ -12,8 +14,10 @@ public class CompteurDeTour {
     // **************************************************************************
     // **************************************************************************
     // **************************************************************************
+    
     // <editor-fold defaultstate="collapsed" desc="Constructeurs et initialisation">
-    public CompteurDeTour() {
+    public CompteurDeTour() 
+    {
         this.cptrTour = 1;
     }
     // </editor-fold>
@@ -21,12 +25,15 @@ public class CompteurDeTour {
     // **************************************************************************
     // **************************************************************************
     // **************************************************************************
+    
     // <editor-fold defaultstate="collapsed" desc="Getters et setters">
-    public int getCptrTour() {
+    public int getCptrTour() 
+    {
         return cptrTour;
     }
 
-    public void setCptrTour(int cptrTour) {
+    public void setCptrTour(int cptrTour) 
+    {
         this.cptrTour = cptrTour;
     }
 
@@ -34,12 +41,15 @@ public class CompteurDeTour {
     // **************************************************************************
     // **************************************************************************
     // **************************************************************************
+    
     // <editor-fold defaultstate="collapsed" desc="Mécanique de jeu">
-    public void augmenteTour() {
+    public void augmenteTour() 
+    {
         this.cptrTour++;
     }
 
-    public void afficheTour() {
+    public void afficheTour() 
+    {
         System.out.println("\n");
         System.out.println("---------------");
         System.out.println("TOUR ACTUEL : " + this.cptrTour);
