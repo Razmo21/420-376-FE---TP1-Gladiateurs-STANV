@@ -32,12 +32,16 @@ public class AffichageEcran {
         
         if (Bob.getPointDeVie() > 0) {
             System.out.println(Bob.getNom() + " gagne le combat !!!");
-        } else if (Igor.getPointDeVie() > 0) {
+            System.out.println("\n");
+        } 
+        else if (Igor.getPointDeVie() > 0) {
             System.out.println(Igor.getNom() + " gagne le combat !!!");
-        } else {
+            System.out.println("\n");
+        } 
+        else {
             System.out.println("Aucun des deux personnages n'a gagné. C'est un match nul !");
-        }
-        System.out.println("\n");
+            System.out.println("\n");
     }
+}
     // </editor-fold>
 }
