@@ -1,3 +1,4 @@
+
 package personnages;
 
 import java.util.Random;
@@ -53,7 +54,7 @@ public String getNom() {
         return valeurDefense;
     }
 
-    public int getIniative() {
+    public int getInitiative() {
         return initiative;
     }
 
@@ -73,8 +74,8 @@ public String getNom() {
         this.valeurDefense = valeurDefense;
     }
 
-    public void setIniative(int iniative) {
-        this.initiative = iniative;
+    public void setInitiative(int initiative) {
+        this.initiative = initiative;
     }
     // </editor-fold>
 
