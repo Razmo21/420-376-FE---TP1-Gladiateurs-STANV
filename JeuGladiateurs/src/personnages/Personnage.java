@@ -2,16 +2,18 @@ package personnages;
 
 import java.util.Random;
 
-public class Personnage {
+public class Personnage 
+{
 
-    // Attributs protégés pour l'héritage
+    // <editor-fold defaultstate="collapsed" desc="Attributs">
     protected String nom;
     protected int pointDeVie;
     protected int valeurMaxAttaque;
     protected int valeurDefense;
     protected int initiative;
+    // </editor-fold>
 
-    // Constructeur principal
+    // <editor-fold defaultstate="collapsed" desc="Constructeurs et initialisation">
     public Personnage(String nom, int attaqueMax, int defense, int pvs, int ini) {
         this.nom = nom;
         this.pointDeVie = pvs;
@@ -20,7 +22,6 @@ public class Personnage {
         this.initiative = ini;
     }
 
-    // Constructeur par défaut
     public Personnage() {
         this.nom = "";
         this.pointDeVie = 0;
@@ -28,8 +29,9 @@ public class Personnage {
         this.valeurDefense = 0;
         this.initiative = 0;
     }
+    // </editor-fold>
 
-    // Getters et setters
+    // <editor-fold defaultstate="collapsed" desc="Getters et setters">
     public String getNom() {
         return nom;
     }
@@ -69,24 +71,31 @@ public class Personnage {
     public void setInitiative(int initiative) {
         this.initiative = initiative;
     }
+    // </editor-fold>
 
-    // Méthodes de jeu
-    public void afficherInfosPersonnage() {
+    // <editor-fold defaultstate="collapsed" desc="Mécaniques de Jeu">
+    public void afficherInfosPersonnage() 
+    {
         System.out.println("\n");
         System.out.println(nom);
         System.out.println("Attaque : " + valeurMaxAttaque);
         System.out.println("Défense : " + valeurDefense);
         System.out.println("Point de vie : " + pointDeVie);
         System.out.println("Initiative : " + initiative);
-        if (pointDeVie >= 1) {
+        
+        if (pointDeVie >= 1) 
+        {
             System.out.println("Statut : Vivant");
-        } else {
+        } 
+        else 
+        {
             System.out.println("Statut : Mort");
         }
     }
 
     // Calcul des dommages
-    protected int attaqueCalcul() { 
+    protected int attaqueCalcul() 
+    { 
         Random rand = new Random();
         int maxValue = valeurMaxAttaque;
         int attaque = rand.nextInt(maxValue + 1);
@@ -94,16 +103,23 @@ public class Personnage {
     }
 
     // Attaque un autre personnage
-    public void frapperPersonnage(Personnage personnageCible) {
+    public void frapperPersonnage(Personnage personnageCible) 
+    {
         int attaque = attaqueCalcul();
         int dommages = attaque - personnageCible.valeurDefense;
-        if (dommages < 0) {
+        
+        if (dommages < 0) 
+        {
             dommages = 0;
         }
+        
         personnageCible.pointDeVie -= dommages;
-        if (personnageCible.pointDeVie < 0) {
+        
+        if (personnageCible.pointDeVie < 0) 
+        {
             personnageCible.pointDeVie = 0;
         }
+        
         System.out.println("\n");
         System.out.println(this.nom + " attaque avec une puissance de : " + attaque);
         System.out.println(personnageCible.getNom() + " a une défense de : " + personnageCible.valeurDefense);
@@ -111,43 +127,58 @@ public class Personnage {
         System.out.println(personnageCible.getNom() + " a maintenant " + personnageCible.pointDeVie + " points de vie.");
     }
 
-    // Génère une nouvelle initiative aléatoire
-    public void setNewInitiativeAleatoire() {
+    public void setNewInitiativeAleatoire() 
+    {
         Random rand = new Random();
         initiative = rand.nextInt(100);
     }
 
-    // Classe Mirmillon
-    public static class Mirmillon extends Personnage {
+    //Mirmillon
+    public static class Mirmillon extends Personnage 
+    {
 
-        public Mirmillon(String nom, int attaqueMax, int defense, int pvs) {
-            super(nom, attaqueMax, defense, pvs, new Random().nextInt(31)); // Initiative entre 0 et 30
+        public Mirmillon(String nom, int attaqueMax, int defense, int pvs) 
+        {
+            super(nom, attaqueMax, defense, pvs, new Random().nextInt(31)); 
         }
 
         @Override
-        public void frapperPersonnage(Personnage personnageCible) {
+        public void frapperPersonnage(Personnage personnageCible) 
+        {
             int dommages;
 
-            for (int i = 0; i < 2; i++) { // Deux frappes
-                if (personnageCible.getPointDeVie() > 0) {
+            for (int i = 0; i < 2; i++) 
+            {
+                if (personnageCible.getPointDeVie() > 0) 
+                {
                     int attaque = attaqueCalcul();
                     dommages = attaque - personnageCible.valeurDefense;
-                    if (dommages < 0) {
+                    
+                    if (dommages < 0) 
+                    {
                         dommages = 0;
                     }
+                    
                     personnageCible.pointDeVie -= dommages;
-                    if (personnageCible.pointDeVie < 0) {
+                    
+                    if (personnageCible.pointDeVie < 0) 
+                    {
                         personnageCible.pointDeVie = 0;
                     }
+                    
                     System.out.println("\n" + this.nom + " attaque avec une puissance de : " + attaque);
                     System.out.println(personnageCible.getNom() + " a une défense de : " + personnageCible.valeurDefense);
                     System.out.println("Les dommages sont de : " + dommages);
                     System.out.println(personnageCible.getNom() + " a maintenant " + personnageCible.pointDeVie + " points de vie.");
 
-                    if (personnageCible.getPointDeVie() <= 0) {
+                    if (personnageCible.getPointDeVie() <= 0) 
+                    {
                         System.out.println(this.nom + " décapite " + personnageCible.getNom() + " !");
                         break;
-                    } else if (i == 0) {
+                    } 
+                    else if (i == 0) 
+                    {
+                        System.out.println("\n");
                         System.out.println(this.nom + " attaque de nouveau !");
                     }
                 }
@@ -156,34 +187,46 @@ public class Personnage {
     }
 
     // Classe Retiaire
-    public static class Retiaire extends Personnage {
-
+    public static class Retiaire extends Personnage 
+    {
         private boolean aFilet;
 
-        public Retiaire(String nom, int attaqueMax, int defense, int pvs) {
-            super(nom, attaqueMax, defense, pvs, new Random().nextInt(100)); // Initiative entre 0 et 99
-            this.aFilet = true; // Commence avec le filet
+        public Retiaire(String nom, int attaqueMax, int defense, int pvs) 
+        {
+            super(nom, attaqueMax, defense, pvs, new Random().nextInt(100));
+            this.aFilet = true;
         }
 
         @Override
-        public void frapperPersonnage(Personnage personnageCible) {
-            if (aFilet) {
+        public void frapperPersonnage(Personnage personnageCible) 
+        {
+            if (aFilet) 
+            {
+                System.out.println("\n");
                 System.out.println(this.nom + " lance son filet !");
                 Random rand = new Random();
-                if (rand.nextInt(100) < 10) { // 10% de chance de toucher
+                
+                if (rand.nextInt(100) < 10) 
+                {
                     System.out.println("Son filet attrape " + personnageCible.getNom() + " et il l’empale sauvagement avec sa lance !");
-                    personnageCible.setPointDeVie(0); // Tuer l’adversaire
-                } else {
+                    personnageCible.setPointDeVie(0);
+                } 
+                else 
+                {
                     System.out.println("Le filet n'atteint pas sa cible !");
                     aFilet = false;
-                    System.out.println(this.nom + " ramasse son filet et en profite pour attaquer !");
-                    super.frapperPersonnage(personnageCible); // Attaque normale
+                    System.out.println(this.nom + " attaque tout de même !");
+                    super.frapperPersonnage(personnageCible);
                 }
-            } else {
+            }
+            else 
+            {
+                System.out.println("\n");
                 System.out.println(this.nom + " ramasse son filet et en profite pour attaquer !");
-                super.frapperPersonnage(personnageCible); // Attaque normale
-                aFilet = true; // Prépare le filet pour le prochain tour
+                super.frapperPersonnage(personnageCible);
+                aFilet = true;
             }
         }
     }
+    // </editor-fold>
 }
