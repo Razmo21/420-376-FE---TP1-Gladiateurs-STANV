@@ -46,7 +46,8 @@ public class JeuGladiateurs
             {
                 mirmillon.frapperPersonnage(retaire);
                 
-                if (retaire.getPointDeVie() <= 0) {
+                if (retaire.getPointDeVie() <= 0) 
+                {
                     break;
                 } 
                 
@@ -56,7 +57,8 @@ public class JeuGladiateurs
             {
                 retaire.frapperPersonnage(mirmillon);
                 
-                if (mirmillon.getPointDeVie() <= 0) {
+                if (mirmillon.getPointDeVie() <= 0) 
+                {
                     break;
                 } 
                 
