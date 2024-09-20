@@ -4,7 +4,10 @@ import java.util.Random;
 
 public class Personnage 
 {
-
+    // **************************************************************************
+    // **************************************************************************
+    // **************************************************************************
+    
     // <editor-fold defaultstate="collapsed" desc="Attributs">
     protected String nom;
     protected int pointDeVie;
@@ -12,9 +15,14 @@ public class Personnage
     protected int valeurDefense;
     protected int initiative;
     // </editor-fold>
+    
+    // **************************************************************************
+    // **************************************************************************
+    // **************************************************************************
 
     // <editor-fold defaultstate="collapsed" desc="Constructeurs et initialisation">
-    public Personnage(String nom, int attaqueMax, int defense, int pvs, int ini) {
+    public Personnage(String nom, int attaqueMax, int defense, int pvs, int ini) 
+    {
         this.nom = nom;
         this.pointDeVie = pvs;
         this.valeurMaxAttaque = attaqueMax;
@@ -22,7 +30,8 @@ public class Personnage
         this.initiative = ini;
     }
 
-    public Personnage() {
+    public Personnage() 
+    {
         this.nom = "";
         this.pointDeVie = 0;
         this.valeurMaxAttaque = 0;
@@ -30,48 +39,66 @@ public class Personnage
         this.initiative = 0;
     }
     // </editor-fold>
+    
+    // **************************************************************************
+    // **************************************************************************
+    // **************************************************************************
 
     // <editor-fold defaultstate="collapsed" desc="Getters et setters">
-    public String getNom() {
+    public String getNom() 
+    {
         return nom;
     }
 
-    public int getPointDeVie() {
+    public int getPointDeVie() 
+    {
         return pointDeVie;
     }
 
-    public int getValeurMaxAttaque() {
+    public int getValeurMaxAttaque() 
+    {
         return valeurMaxAttaque;
     }
 
-    public int getValeurDefense() {
+    public int getValeurDefense() 
+    {
         return valeurDefense;
     }
 
-    public int getInitiative() {
+    public int getInitiative() 
+    {
         return initiative;
     }
 
-    public void setNom(String nom) {
+    public void setNom(String nom) 
+    {
         this.nom = nom;
     }
 
-    public void setPointDeVie(int pointDeVie) {
+    public void setPointDeVie(int pointDeVie) 
+    {
         this.pointDeVie = pointDeVie;
     }
 
-    public void setValeurMaxAttaque(int valeurMaxAttaque) {
+    public void setValeurMaxAttaque(int valeurMaxAttaque) 
+    {
         this.valeurMaxAttaque = valeurMaxAttaque;
     }
 
-    public void setValeurDefense(int valeurDefense) {
+    public void setValeurDefense(int valeurDefense) 
+    {
         this.valeurDefense = valeurDefense;
     }
 
-    public void setInitiative(int initiative) {
+    public void setInitiative(int initiative) 
+    {
         this.initiative = initiative;
     }
     // </editor-fold>
+    
+    // **************************************************************************
+    // **************************************************************************
+    // **************************************************************************
 
     // <editor-fold defaultstate="collapsed" desc="Mécaniques de Jeu">
     public void afficherInfosPersonnage() 
